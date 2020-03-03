@@ -10,8 +10,10 @@ const fs = require("fs");
 const iconv = require('iconv-lite');
 const parse = require('csv-parse/lib/sync');
 
-let s = [];
-let t = [];
+let cn = [];
+let tr = [];
+let jx3box_cn = [];
+let jx3box_tr = [];
 
 buildOpencc()
 buildLocalmap()
@@ -19,31 +21,33 @@ outputDict()
 
 //Read origin dict and construct the new map
 function buildOpencc(){
-    let origindata = fs.readFileSync("./STCharacters.txt", { encoding: "utf-8" }) 
+    let origindata = fs.readFileSync('./src/STCharacters.txt', { encoding: "utf-8" }) 
     origindata.split("\n").forEach(function(g) {
         let _g = g.split("\t")
-        s.push(_g[0])
-        t.push(_g[1][0])
+        cn.push(_g[0])
+        tr.push(_g[1][0])
     });
 }
 
 //Merge the custom dict
 function buildLocalmap(){
-    let localdata_buffer = fs.readFileSync('../jx3box.csv')
+    let localdata_buffer = fs.readFileSync('./src/jx3box.csv')
     let localdata = parse(iconv.decode(Buffer.from(localdata_buffer),'gb2312'));
     localdata.forEach(function (g){
-        s.push(g[0])
-        t.push(g[1])
+        jx3box_cn.push(g[0])
+        jx3box_tr.push(g[1])
     })
 }
 
 // Output the array for package
 function outputDict(){
     let output = `module.exports = {
-        'zh-cn' : ${JSON.stringify(s)},
-        'zh-tr' : ${JSON.stringify(t)}
+        'zh-cn' : ${JSON.stringify(cn)},
+        'zh-tr' : ${JSON.stringify(tr)},
+        'jx3box-cn' : ${JSON.stringify(jx3box_cn)},
+        'jx3box-tr' : ${JSON.stringify(jx3box_tr)},
     }`;
-    fs.writeFile("../main.js", output, function(err) {
+    fs.writeFile("./main.js", output, function(err) {
         if (err) console.log(err);
     });
 }

@@ -5,7 +5,7 @@
 
 ## 使用
 你可以通过 https://www.jx3box.com/app/lang 进行在线转译你的作品。  
-*P.S. 你还可以将此项目通过NPM引入到你自己的项目，具体详见[此文档](./docs/npm.md)。*
+*P.S. 你还可以将此项目通过NPM引入到你自己的项目，具体详见[此文档](https://github.com/JX3BOX/jx3box-dict/blob/master/docs/npm.md)。*
 
 ## 反馈
 你也可以通过 https://github.com/JX3BOX/jx3box-dict/issues 提交需要补充的词汇。  
