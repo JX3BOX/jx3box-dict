@@ -1,0 +1,20 @@
+{
+    "name": "@JX3BOX/jx3box-dict",
+    "version": "1.0.0",
+    "description": "JX3BOX剑网3繁简转换专用词库",
+    "main": "main.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JX3BOX/jx3box-dict.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "devDependencies": {
+        "iconv-lite": "^0.5.1",
+        "csv-parse": "^4.8.7"
+    },
+    "scripts": {
+        "build": "node ./bin/builder.js"
+    }
+}
