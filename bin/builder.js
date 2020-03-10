@@ -41,13 +41,13 @@ function buildLocalmap(){
 
 // Output the array for package
 function outputDict(){
-    let output = `module.exports = {
-        'zh-cn' : ${JSON.stringify(cn)},
-        'zh-tr' : ${JSON.stringify(tr)},
-        'jx3box-cn' : ${JSON.stringify(jx3box_cn)},
-        'jx3box-tr' : ${JSON.stringify(jx3box_tr)},
-    }`;
-    fs.writeFile("./main.js", output, function(err) {
+    let output = {
+        'zh-cn' : cn,
+        'zh-tr' : tr,
+        'jx3box-cn' : jx3box_cn,
+        'jx3box-tr' : jx3box_tr,
+    };
+    fs.writeFile("./dict.json", JSON.stringify(output), function(err) {
         if (err) console.log(err);
     });
 }
