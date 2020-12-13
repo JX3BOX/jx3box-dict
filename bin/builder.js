@@ -42,10 +42,10 @@ function buildLocalmap(){
 // Output the array for package
 function outputDict(){
     let output = {
-        'zh-cn' : cn,
-        'zh-tr' : tr,
-        'jx3box-cn' : jx3box_cn,
-        'jx3box-tr' : jx3box_tr,
+        'cn' : cn,
+        'tr' : tr,
+        'jx3cn' : jx3box_cn,
+        'jx3tr' : jx3box_tr,
     };
     fs.writeFile("./dict.json", JSON.stringify(output), function(err) {
         if (err) console.log(err);
