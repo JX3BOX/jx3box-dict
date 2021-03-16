@@ -5,7 +5,7 @@
 
 ## 使用
 你可以通过 https://www.jx3box.com/app/translator 在线转译你的作品。  
-或直接引用 https://cdn.jsdelivr.net/gh/JX3BOX/jx3box-dict/main.js 构建你自己的项目
+或直接引用 https://cdn.jsdelivr.net/gh/JX3BOX/jx3box-dict@master/dict.json 构建你自己的项目
 
 ## 反馈
 你也可以通过 https://github.com/JX3BOX/jx3box-dict/issues 提交需要补充的词汇。  
