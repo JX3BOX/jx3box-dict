@@ -11,5 +11,6 @@
 你也可以通过 https://github.com/JX3BOX/jx3box-dict/issues 提交需要补充的词汇。  
 
 ## 贡献名单
-感谢以下小伙伴对词库的辛勤整理：
+感谢以下小伙伴对词库的辛勤整理&贡献：
 + 南宫伯
++ BILIN 
