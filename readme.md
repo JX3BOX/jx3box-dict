@@ -4,7 +4,7 @@
 网上直译的词库将可能导致宏无法运行或数据无法正常监控。
 
 ## 使用
-你可以通过 https://www.jx3box.com/app/jx3-translator 在线转译你的作品。  
+你可以通过 https://www.jx3box.com/app/translator 在线转译你的作品。  
 或直接引用JSON https://cdn.jsdelivr.net/npm/@jx3box/jx3box-dict/dict.json 构建你自己的项目
 
 ## 反馈
