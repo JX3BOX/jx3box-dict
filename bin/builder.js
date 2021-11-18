@@ -32,7 +32,8 @@ function buildOpencc(){
 //Merge the custom dict
 function buildLocalmap(){
     let localdata_buffer = fs.readFileSync('./src/jx3box.csv')
-    let localdata = parse(iconv.decode(Buffer.from(localdata_buffer),'gb2312'));
+    // let localdata = parse(iconv.decode(Buffer.from(localdata_buffer),'gb2312'));
+    let localdata = parse(iconv.decode(Buffer.from(localdata_buffer),'utf-8'));
     localdata.forEach(function (g){
         jx3box_cn.push(g[0])
         jx3box_tr.push(g[1])
