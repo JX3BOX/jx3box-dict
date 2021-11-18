@@ -14,3 +14,5 @@
 感谢以下小伙伴对词库的辛勤整理&贡献：
 + 南宫伯
 + BILIN 
++ WUSISANERYI
++ CoolguyNH
