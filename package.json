@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-dict",
-    "version": "1.1.1",
+    "version": "2.0.0",
     "description": "JX3BOX剑网3繁简转换专用词库",
     "main": "main.js",
     "repository": {
@@ -12,6 +12,7 @@
         "csv-parse": "^4.8.7"
     },
     "scripts": {
-        "build": "node ./bin/builder.js"
+        "build": "node ./bin/builder.js",
+        "build-skill": "node ./bin/buildSkillMap.js"
     }
 }
