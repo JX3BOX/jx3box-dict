@@ -15,10 +15,6 @@ let tr = [];
 let jx3box_cn = [];
 let jx3box_tr = [];
 
-buildOpencc()
-buildLocalmap()
-outputDict()
-
 //Read origin dict and construct the new map
 function buildOpencc(){
     let origindata = fs.readFileSync('./src/STCharacters.txt', { encoding: "utf-8" }) 
@@ -31,13 +27,23 @@ function buildOpencc(){
 
 //Merge the custom dict
 function buildLocalmap(){
-    let localdata_buffer = fs.readFileSync('./src/jx3box.csv')
-    // let localdata = parse(iconv.decode(Buffer.from(localdata_buffer),'gb2312'));
-    let localdata = parse(iconv.decode(Buffer.from(localdata_buffer),'utf-8'));
-    localdata.forEach(function (g){
-        jx3box_cn.push(g[0])
-        jx3box_tr.push(g[1])
-    })
+    const baseDir = "./src/JX3BOX";
+    fs.readdirSync(baseDir).forEach(function(fileName) {
+        if(fileName.toLocaleLowerCase().endsWith(".tsv")) {
+            const fullPath = `${baseDir}/${fileName}`;
+            console.log(`Processing ${fullPath}`);
+            let localdata_buffer = fs.readFileSync(fullPath);
+            // let localdata = parse(iconv.decode(Buffer.from(localdata_buffer),'gb2312'));
+            let localdata = parse(iconv.decode(Buffer.from(localdata_buffer),'utf-8'), { delimiter: '\t' });
+            localdata.forEach(function (g){
+                jx3box_cn.push(g[0])
+                jx3box_tr.push(g[1])
+            });
+        }
+        else {
+            console.log(`Ignoring ${file}`);
+        }
+    });
 }
 
 // Output the array for package
@@ -52,3 +58,8 @@ function outputDict(){
         if (err) console.log(err);
     });
 }
+
+// main
+buildOpencc();
+buildLocalmap();
+outputDict();
