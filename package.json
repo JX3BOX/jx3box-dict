@@ -8,7 +8,8 @@
         "url": "git+https://github.com/JX3BOX/jx3box-dict.git"
     },
     "devDependencies": {
-        "@jx3box/jx3box-build-common": "^0.1.7"
+        "iconv-lite": "^0.5.1",
+        "csv-parse": "^4.8.7"
     },
     "scripts": {
         "build": "node ./tools/build.js"
