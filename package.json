@@ -12,6 +12,7 @@
         "csv-parse": "^4.8.7"
     },
     "scripts": {
-        "build": "node ./tools/build.js"
+        "build": "node ./bin/builder.js",
+        "build-skill": "node ./bin/buildSkillMap.js"
     }
 }
