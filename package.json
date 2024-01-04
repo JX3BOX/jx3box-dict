@@ -12,5 +12,8 @@
     },
     "devDependencies": {
         "@jx3box/jx3box-build-common": "^0.1.10"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21"
     }
 }
