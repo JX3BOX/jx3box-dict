@@ -47,6 +47,8 @@ const buildMapping = async (input, { tsv_tr_index = 0 }) => {
             data.split("\n").forEach(function (line) {
                 if (line.trim()) {
                     let items = line.split("\t");
+                    if (!items[0].trim()) return;
+
                     cn.push(items[0].trim());
                     tr.push(items[1].trim().split(" ")[tsv_tr_index]); // 对应 OpenCC 有多个映射的情况
                 }
