@@ -2,12 +2,12 @@ const path = require("path");
 const {
     TABLE_DEFAULT_ROW_MODE,
     readFile,
-    parseTable,
     ensureDir,
     writeFile,
 } = require("@jx3box/jx3box-build-common/file");
 const { initLogger } = require("@jx3box/jx3box-build-common/logger");
 const kbt = require("./kbt");
+const { parseTable } = require("./tools.js");
 
 let baseLogger = null;
 
@@ -23,6 +23,8 @@ const readFilters = async () => {
     const skillKungfu = await parseTable(await readFile(skillKungfuFilePath), {
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE,
         keepColumns: ["Skill"],
+        quoteChar: "🦀",
+        delimiter: "\t",
     });
     for (let row of skillKungfu) {
         for (let skillGroup of row.Skill.split(";"))
@@ -41,6 +43,8 @@ const readFilters = async () => {
         {
             useDefaultRow: TABLE_DEFAULT_ROW_MODE.NO,
             keepColumns: ["SkillID"],
+            delimiter: "\t",
+            quoteChar: "🦀",
         }
     );
     for (let row of skillOpenLevel) {
@@ -64,6 +68,8 @@ const readFilters = async () => {
                 "SkillID4",
                 "SkillID5",
             ],
+            delimiter: "\t",
+            quoteChar: "🦀",
         }
     );
     for (let row of tenExtraPoint) {
@@ -84,6 +90,8 @@ const buildSkillsSimp = async filter => {
     const skillSimp = await parseTable(await readFile(skillSimpFilePath), {
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE,
         keepColumns: ["SkillID", "Level", "Name"],
+        delimiter: "\t",
+        quoteChar: "🦀",
     });
 
     for (let row of skillSimp) {
@@ -134,6 +142,8 @@ const readBuffsSimp = async () => {
     const buffSimp = await parseTable(await readFile(buffSimpFilePath), {
         useDefaultRow: TABLE_DEFAULT_ROW_MODE.USE,
         keepColumns: ["BuffID", "Level", "IconID", "Show", "Name"],
+        delimiter: "\t",
+        quoteChar: "🦀",
     });
 
     for (let row of buffSimp) {

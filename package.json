@@ -1,6 +1,6 @@
 {
     "name": "@jx3box/jx3box-dict",
-    "version": "2.2.2",
+    "version": "2.2.3",
     "description": "JX3BOX剑网3繁简转换专用词库",
     "main": "main.js",
     "repository": {
@@ -8,7 +8,7 @@
         "url": "git+https://github.com/JX3BOX/jx3box-dict.git"
     },
     "scripts": {
-        "build": "node ./tools/build.js && node ./tools/merge.js"
+        "build": "node ./tools/build.js && node ./tools/merge.js && npm version patch --no-git-tag-version"
     },
     "devDependencies": {
         "@jx3box/jx3box-build-common": "^0.1.10"
