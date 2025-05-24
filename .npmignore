@@ -4,3 +4,6 @@ docs
 .gitignore
 .npmignore
 test
+raw
+temp
+tools
